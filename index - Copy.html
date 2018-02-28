@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Hoax - Admin Panel</title>
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body ng-app="app" ng-controller="mainCtrl">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Hoax</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!-- <ul class="nav navbar-nav">
+					<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Link</a></li>
+					<li class="dropdown">
+						<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+				</ul> -->
+
+				<ul class="nav navbar-nav navbar-right">
+					<li ng-if="isUserLogin" ng-class="getMenuClass('/category')"><a href="#!/category">Category</a></li>
+					<li ng-if="isUserLogin" ng-class="getMenuClass('/question')"><a href="#!/question">Question</a></li>
+					<li ng-if="isUserLogin" ng-class="getMenuClass('/setting')"><a href="#!/setting">Setting</a></li>
+					<li ng-if="isUserLogin"><a href="javascript:void(0);" ng-click="logout();">Logout</a></li>
+					<!-- <li class="dropdown">
+						<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container" ng-view></div>
+	<script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+	<script src="bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+	<script src="bower_components/angular-base64-upload/dist/angular-base64-upload.js" type="text/javascript"></script>
+
+	<!-- Main Js  -->
+	<script src="js/app.js" type="text/javascript"></script>
+	<script src="js/directive.js" type="text/javascript"></script>
+
+	<!-- Controller -->
+	<script src="js/controller/login.controller.js" type="text/javascript"></script>
+	<script src="js/controller/dashboard.controller.js" type="text/javascript"></script>
+	<script src="js/controller/question.controller.js" type="text/javascript"></script>
+	<script src="js/controller/category.controller.js" type="text/javascript"></script>
+	<script src="js/controller/setting.controller.js" type="text/javascript"></script>
+
+
+	<script src="js/services/login.services.js" type="text/javascript"></script>
+	<script src="js/services/dashboard.services.js" type="text/javascript"></script>
+	<script src="js/services/question.services.js" type="text/javascript"></script>
+	<script src="js/services/category.services.js" type="text/javascript"></script>
+	<script src="js/services/setting.services.js" type="text/javascript"></script>
+
+
+
+</body>
+</html>

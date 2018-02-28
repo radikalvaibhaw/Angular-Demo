@@ -1,0 +1,52 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10 col-sm-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h5>Dashboard</h5>
+			</div>
+			<div class="panel-body">
+				<div>
+					<p ng-if="message.success && message.message"  class="bg-success">{{message.message}}</p>
+					<p ng-if="!message.success && message.message"  class="bg-danger">{{message.message}}</p>
+				</div>
+				<form name="myForm">
+			    	<!-- <fieldset>
+				      	<legend>Upload on form submit</legend>
+				      	<i ng-show="myForm.userName.$error.required">*required</i>
+				      	<br>Photo:
+				      	<input type="file" ngf-select ng-model="picFile" name="file"
+				              required
+				             ngf-model-invalid="errorFile">
+				      	<i ng-show="myForm.file.$error.required">*required</i><br>
+				      	<button ng-disabled="!myForm.$valid"
+				              ng-click="uploadPic(picFile)">Submit</button>
+				      	<span class="progress" ng-show="picFile.progress >= 0">
+				        	<div style="width:{{picFile.progress}}%"
+				            	ng-bind="picFile.progress + '%'"></div>
+				      	</span>
+				      	<span ng-show="picFile.result">Upload Successful</span>
+				      	<span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+			    	</fieldset>
+			    	<br> -->
+					<div class="row">
+						<div class="col-sm-5">
+							<input type='file' ng-model='yourModel' class="btn btn-danger" base-sixty-four-input>
+						</div>
+						<div class="col-sm-6">
+							{{yourModel.filename}}
+						</div>
+					</div>
+					<div class="row" style="margin:5px;">
+						<div class="col-sm-6">
+							<button type="button" class="btn btn-success" ng-disabled="isButtonBusy" ng-click="uploadFile();">
+								Upload
+								<i class="fa fa-spinner fa-spin" ng-if="isButtonBusy" style="font-size:24px"></i>
+							</button>
+						</div>
+					</div>
+				</hr/>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

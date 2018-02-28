@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="col-md-12 col-sm-12">
+        
+        <!-- <div class="col-md-offset-1 col-md-10 col-sm-12"> -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h5>
+                        Customer List
+                     </h5>
+                </div>
+                <div class="panel-body">
+                <div class="row">
+                	 
+                        <div class="col-md-3 col-md-offset-9">
+                            <input type="text" ng-model="search" class="form-control search-input" placeholder="Search" />
+                        </div>
+                    
+                </div>
+                    <table class="table table-bordered  table-striped">
+                    	<thead>
+                            <!--<tr>
+                                <td colspan="8">
+                                    <div class="col-sm-9">
+        
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" ng-model="search" class="form-control" placeholder="Search" />
+                                    </div>
+                                </td>
+                            </tr>-->
+                            <tr>
+                                <th>S No.</th>
+                                <th>Name</th>
+                                <th>Card Number</th>
+                                <th>Mobile Number</th>
+                                <th>Amount</th>
+                            </tr>
+                        
+                        </thead>
+                        <tbody>
+                            <tr ng-if="!transactionList">
+                                <td colspan="8" class="text-center">
+                                    <span class="text-warning">Loading ... <i class="fa fa-spinner fa-spin" style="font-size:24px"></i></span>
+                                </td>
+                            </tr>
+                            <tr ng-if="transactionList.length > 0" ng-repeat="result in transactionList | filter : search">
+                                <td data-label="S No.">{{$index+1}}</td>
+                                <td data-label="Name">{{result.name}}</td>
+                                <td data-label="Card Number">{{result.card_number}}</td>
+                                <td data-label="Mobile Number">{{result.mobile_number}}</td>
+                                <td data-label="Amount">{{result.amount}}</td>
+                            </tr>
+                            <tr ng-if="transactionList.length <= 0">
+                                <td colspan="6" class="text-center text-danger">No data found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+    </div>
+</div>

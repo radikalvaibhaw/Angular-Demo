@@ -1,0 +1,27 @@
+{
+  "name": "word-game-admin-panel",
+  "homepage": "https://github.com/IDS-hub/WorldSpellingLeague.git",
+  "authors": [
+    "Randhir Jha <randhir@radikal-labs.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "^2.5.0",
+    "angular-route": "^1.6.4",
+    "ngstorage": "^0.3.11",
+    "angular-notify": "^2.5.1",
+    "angular-base64-upload": "^0.1.22",
+    "angularjs-datepicker": "^2.1.23",
+    "ng-file-upload": "^12.2.13"
+  }
+}
